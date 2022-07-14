@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace EjemploConsola
+namespace Ejemplo
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            System.Console.WriteLine("Hola");
         }
     }
 }
