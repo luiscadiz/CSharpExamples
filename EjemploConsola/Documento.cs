@@ -44,10 +44,22 @@ namespace Ejemplo
             _items.Add(item);
         }
 
-        public List<Item> items
+        //No es aconsejable exponer Una lista a travez de un get ya que este devuelve una referencia 
+        //al objeto por lo que se estaria violando el encapsulamiento.
+        // public List<Item> Items
+        // {
+        //     get{
+        //         return _items;
+        //     }
+        // }
+
+        //Para solucionar el problema del rompimiento del encapsulamiento, se puede usar
+        //Una interfaz del tipo IReadonlyCollectión que nos garantiza que sera de solo lectura.
+
+        public IReadonlyCollectión<Item> Items
         {
             get{
-                return _items;
+                return _items.AsReadOnly();
             }
         }
     }
